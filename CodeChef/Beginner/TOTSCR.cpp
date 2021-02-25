@@ -11,19 +11,19 @@ int main()
     cin >> tt ;
     while(tt--)
     {
-        int n , k ;
+        long int n , k ;
         cin >> n >> k ;
-        int array[k];
+        long int array[k];
         for(int i=0 ; i<k ; i++)
         {
-            cin >> array[k] ;
+            cin >> array[i] ;
         }
 
         while(n--)
         {
             string s;
             cin >> s ;
-            int ans=0;
+            long int ans=0;
             for(int i=0; i<k ; i++)
             {
                 if(s[i]=='1')
