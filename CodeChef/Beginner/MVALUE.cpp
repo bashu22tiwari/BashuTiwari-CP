@@ -20,18 +20,14 @@ int main()
             cin >> arr[i] ;
         }
 
-        ans = (arr[0]*arr[1])+abs(arr[0]-arr[1]) ;
+        int p,n,z;
 
         for(int i=0 ; i<n ; i++)
         {
-            for(int j=i+1 ; j<n ; j++)
-            {
-                if((arr[i]*arr[j])+abs(arr[i]-arr[j]) > ans)
-                {
-                    ans = (arr[i]*arr[j])+abs(arr[i]-arr[j]); 
-                }
-            }
+            
         }
+
+        
 
         cout << ans << "\n" ;
     }
