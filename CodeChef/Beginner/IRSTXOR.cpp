@@ -5,20 +5,25 @@
 #include <vector>
 using namespace std;
 
-long int findAns(int N)
+void findAns(int *ans , int *limit , int N)
 {
-    int ans=1;
+    
     while(1)
     {
-        ans *= 2;
-        if(ans>N)
+        *ans *= 2;
+        if(*ans>N)
         {
             break;
         }
+        *limit = *ans ;
     }
 
-    return ans-1 ;
+    *limit-=1;
+    *ans-=1;
+
 }
+
+
 
 int main()
 {
@@ -28,17 +33,19 @@ int main()
     {
         int c;
         cin >> c ;
-        long int ans;
-        ans = findAns(c);
+        int ans=1,limit=1;
+        findAns(&ans , &limit , c);
+
+        cout << limit << " " << ans << endl;
 
 
-        long int i,j,maxProduct=0 ;
+        int i,j,maxProduct=0 ;
 
-        for(i=1 ; i<=ans ; i++)
+        for(i=1 ; i<=limit ; i++)
         {
-            for(j=i+1 ; i<=ans ; j++)
+            for(j=limit ; j<=ans ; j++)
             {
-                long int a = i^j ;
+                int a = i^j ;
                 if(a==c)
                 {
                     if( i*j > maxProduct)
