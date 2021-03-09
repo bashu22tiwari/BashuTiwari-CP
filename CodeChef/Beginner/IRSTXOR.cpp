@@ -5,22 +5,11 @@
 #include <vector>
 using namespace std;
 
-void findAns(int *ans , int *limit , int N)
+
+
+int countBits(int N)
 {
-    
-    while(1)
-    {
-        *ans *= 2;
-        if(*ans>N)
-        {
-            break;
-        }
-        *limit = *ans ;
-    }
-
-    *limit-=1;
-    *ans-=1;
-
+    return (int)log2(N)+1;
 }
 
 
@@ -31,31 +20,30 @@ int main()
     cin >> tt ;
     while(tt--)
     {
-        int c;
+        long int c;
         cin >> c ;
-        int ans=1,limit=1;
-        findAns(&ans , &limit , c);
+        long long int ans=1;
+        long long int limit=1;
+        int bit = countBits(c);
 
-        cout << limit << " " << ans << endl;
+        ans = (1<<(bit)) - 1;
+        limit = (1<<(bit-1)) - 1 ;
 
 
-        int i,j,maxProduct=0 ;
+
+        long int i;
+        long long int j;
+        long long int maxProduct=0 ;
 
         for(i=1 ; i<=limit ; i++)
         {
-            for(j=limit ; j<=ans ; j++)
+            for(j=limit+1 ; j<=ans ; j++)
             {
-                int a = i^j ;
-                if(a==c)
-                {
-                    if( i*j > maxProduct)
-                    {
-                        maxProduct=i*j;
-                    }
-                }
+                
+                (i^j)==c?maxProduct=max(maxProduct , (i*j)):0;
             }
         }
 
-        cout << maxProduct << endl ;
+        cout << maxProduct << "\n";
     }
 }
