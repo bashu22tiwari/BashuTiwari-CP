@@ -3,13 +3,13 @@ using namespace std;
 
 int fact(int n)
 {
-    if(n==1)
+    int a=n+1;
+    int ans = 1;
+    while((--a) >=1)
     {
-        return 1;
+        ans*=a;
     }
-    else{
-        return n*fact(n-1);
-    }
+    return ans;
 
 }
 int main()

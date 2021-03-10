@@ -12,21 +12,24 @@ int main()
     int arr[n];
     for(int i=0 ; i<n ; i++)
     {
-        cin >> arr[0];
+        cin >> arr[i];
     }
 
-    int d;
-    cin >> d ;
+    // int d;
+    // cin >> d ;
 
-    for(int i=0 ; i<((d/2)+1) ; i++)
+    for(int i=0 ; i<n/2 ; i++)
     {
-        int temp=arr[i];
-        arr[i] = arr[d-i];
-        arr[d-i] = temp;
+        int temp;
+        temp = arr[i];
+        arr[i] = arr[n-i-1];
+        arr[n-i-1] = temp;
     }
+
+
 
     for(int i=0 ; i<n ; i++)
     {
-       cout << arr[i] ;
+       cout << arr[i] << " " ;
     }
 }
