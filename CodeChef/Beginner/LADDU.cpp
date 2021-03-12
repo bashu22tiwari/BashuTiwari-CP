@@ -19,17 +19,47 @@ int main()
 
     for(int i=0 ; i<n ; i++)
     {
-        if(i==0)
-        {
-            string s;
-            cin >> s;
-            int rank;
-            cin >> rank;
+       string type;
+       cin >> type;
+       if(type == "CONTEST_WON")
+       {
+           int rank;
+           cin >> rank ;
 
-            if(rank)
-        }
+           if(rank<=20)
+           {
+               count += (300+(20-rank));
+           }
+           else
+           {
+               count += 300 ;
+           }
+       }
+       else if( type == "TOP_CONTRIBUTOR")
+       {
+           count += 300;
+       }
+       else if( type == "BUG_FOUND")
+       {
+           int severnity;
+           cin >> severnity;
+
+           count += severnity;
+       }
+       else if( type == "CONTEST_HOSTED")
+       {
+           count += 50;
+       }
     }
-
+    
+    if(origin == "INDIAN")
+    {
+        cout << count/200 << "\n";
+    }
+    else
+    {
+        cout << count/400 << "\n" ;
+    }
         
         
     }
