@@ -52,9 +52,10 @@ int main()
         }
         else
         {
+
             int b = rem/distance;
             pairs = max - b - 1;
         }
         cout << distance << " " << pairs << "\n"; 
-    }
+    
 }
