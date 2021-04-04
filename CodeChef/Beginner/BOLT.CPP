@@ -27,7 +27,7 @@ int main(){
 
         cout << final_time << endl;
 
-        if(final_time < 9.58){
+        if(9.58 - final_time >= 0.005){
             cout << "YES\n";
         }
         else{
