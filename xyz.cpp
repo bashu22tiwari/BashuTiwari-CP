@@ -2,29 +2,13 @@
 using namespace std;
 
 int main(){
-    int *p1 = new int[1];
-    int *p2 = new int[1];
-
-    p1[0] = 1;
-    // p1[1] = 1;
-    // p1[2] = 1;
-    // p1[3] = 1;
-    // p1[4] = 1;
-
-    
-    p2[0] = 1;
-    // p2[1] = 1;
-    // p2[2] = 1;
-    // p2[3] = 1;
-    // p2[4] = 1;
-
-    
-
-    // cout << p1 << " " << p2 << endl;
-    // cout << p1+1 << " " << p2+1 << endl;
-    // cout << *p1 << " " << *p2 << endl;
-    // cout << *p1+1 << " " << *p2+1 << endl;
-    // cout << *(p1+1) << " " << *(p2+1) << endl;
-    // cout << p1+2 << " " << *(p2+3) << endl;
-    cout << p1-p2 ;
+    int n=30;
+    int MOD = 1000000007;
+    int count1 = (1<<n)%MOD;
+    int count2 = (1<<n)%MOD;
+    int count = (count1*count2)%MOD;
+    cout << count1 << "\n";
+    cout << count2 << "\n";
+    cout << count << "\n";
+    cout << (count*count)%MOD << "\n";
 }
