@@ -8,47 +8,26 @@ int main(){
     int tt;
     cin >> tt;
     while(tt--){
-        int n = 30;
+        int n;
         cin >> n;
-		int MOD = 1000000007;
-        int x=30;
-        int repeat = n/x;
-        int ones = n%x;
-        int count1=0;
-        int count2=0;
-        
-        if(ones==0){
-            if(repeat==1){
-                cout << (1<<(x-1))%MOD;
-            }
-            else if(repeat>1){
-                count1 = (1<<x)%MOD;
-                for(int i=2 ; i<repeat ; i++){
-                    count1 = (count1*count1)%MOD;
-                }
+        int MOD = 1000000007;
+        int count = (pow(2,30))%MOD;
+        n--;
 
-                count2 = (1<<(x-1))%MOD;
+        int repeat = n/30;
+        int rem = n%30;
 
-                cout << (count1*count2)%MOD;
-            }
-        }
-        else if(ones>0){
-            if(repeat>=1){
-                count1 = (1<<x)%MOD;
-                for(int i=2 ; i<=repeat ; i++){
-                    count1 = (count1*count1)%MOD;
-                }
-
-                count2 = (1<<(ones-1))%MOD;
-
-                cout << (count1*count2)%MOD;
-            }
-            else{
-                cout << (1<<(ones-1))%MOD <<"\n";
-            }
+        for(int i=1 ; i<=repeat ; i++){
+            count = (count*count)%MOD;
         }
 
+        for(int i=1 ; i<=rem ; i++){
+            count = (count*2)%MOD;
         }
         
-        
+        cout << count << "\n"
+
+
+
     }
+}
