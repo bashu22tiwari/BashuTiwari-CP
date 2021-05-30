@@ -8,26 +8,15 @@ int main(){
     int tt;
     cin >> tt;
     while(tt--){
-        int n;
-        cin >> n;
-        int MOD = 1000000007;
-        int count = (pow(2,30))%MOD;
-        n--;
-
-        int repeat = n/30;
-        int rem = n%30;
-
-        for(int i=1 ; i<=repeat ; i++){
-            count = (count*count)%MOD;
+        int G,p;
+        cin >> G >> p;
+        int arr[10];
+        for(int i=0 ; i<10 ; i++){
+            cin >> arr[i] ;
         }
 
-        for(int i=1 ; i<=rem ; i++){
-            count = (count*2)%MOD;
+        for(int i=9 ; i>=G ; i--){
+            if()
         }
-        
-        cout << count << "\n"
-
-
-
     }
 }
