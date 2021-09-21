@@ -5,9 +5,14 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int tt;
+    string tt;
     cin >> tt;
-    while(tt--){
-        
+    string s1 = "Hello,World!" ;
+
+    if(s1==tt){
+        cout << "AC";
+    }
+    else{
+        cout << "WA";
     }
 }

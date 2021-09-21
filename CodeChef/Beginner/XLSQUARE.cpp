@@ -2,12 +2,11 @@
 using namespace std;
 
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
     int tt;
     cin >> tt;
     while(tt--){
-        
+        int n,a;
+        cin >> n >> a; 
+        cout << (int)sqrt(n)*a << "\n";
     }
 }
